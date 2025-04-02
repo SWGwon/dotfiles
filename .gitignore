@@ -1,0 +1,24 @@
+# Vim plugin bundles (managed by Vundle)
+.vim/bundle/
+
+# Temporary or swap files
+*.swp
+*.swo
+*.swn
+
+# Backup files
+*~
+*.bak
+*.tmp
+
+# Session and undo
+.vim/sessions/
+.vim/undo/
+.viminfo
+vim_backup/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+vim_backup
