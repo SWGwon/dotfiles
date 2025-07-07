@@ -30,6 +30,8 @@ map <C-h> <C-W>h
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-l> <C-W>l
+" NERDTree를 열 때 숨김 파일을 기본적으로 표시
+let NERDTreeShowHidden=1
 
 set background=dark
 colorscheme solarized8
