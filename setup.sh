@@ -5,7 +5,7 @@ REPO_DIR="$PWD"        # git clone 해둔 디렉토리
 VIMRC_SOURCE="$REPO_DIR/vimrc"   # 저장소 내 vimrc 경로
 VIMRC_TARGET="$HOME/.vimrc"      # 실제로 링크할 위치
 BACKUP_DIR="$REPO_DIR/vim_backup"    # 백업 저장 위치
-VUNDLE_DIR="$HOME/.vim/bundle/Vundle.vim"
+PLUG_DIR="$HOME/.vim/autoload/plug.vim"
 
 echo "🔧 Setting up vim config..."
 
@@ -20,19 +20,20 @@ fi
 echo "🔗 Creating symlink: $VIMRC_TARGET -> $VIMRC_SOURCE"
 ln -sf "$VIMRC_SOURCE" "$VIMRC_TARGET"
 
-# 3. Vundle 설치
-if [ ! -d "$VUNDLE_DIR" ]; then
-    echo "📥 Installing Vundle..."
-    git clone https://github.com/VundleVim/Vundle.vim.git "$VUNDLE_DIR"
+# 3. vim-plug 설치
+if [ ! -f "$PLUG_DIR" ]; then
+    echo "📥 Installing vim-plug..."
+    curl -fLo "$PLUG_DIR" --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 else
-    echo "✅ Vundle already installed"
+    echo "✅ vim-plug already installed"
 fi
 
 # 4. 플러그인 설치
-echo "📦 Installing plugins with Vundle..."
-vim +PluginInstall +qall
+echo "📦 Installing plugins with vim-plug..."
+vim +PlugInstall +qall
 
-echo "✅ Done! Vim with Vundle is ready 🎉"
+echo "✅ Done! Vim with vim-plug is ready 🎉"
 
 
 #iterm2 Shell Integration
@@ -45,3 +46,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 nvm install --lts
 npm install -g @google/gemini-cli
+

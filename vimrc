@@ -1,27 +1,25 @@
-set nocompatible 
-filetype off 
-"Vundle install
-"git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-set rtp+=~/.vim/bundle/Vundle.vim 
-set textwidth=80
-call vundle#begin() 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'tpope/vim-fugitive'
-Plugin 'lifepillar/vim-solarized8'
-Plugin 'scrooloose/nerdtree'
-"#Plugin 'vim-syntastic/syntastic'
-Plugin 'vim-airline/vim-airline-themes'
-call vundle#end()        
+" vim-plug
+call plug#begin('~/.vim/plugged')
 
+Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'lifepillar/vim-solarized8'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline-themes'
+
+call plug#end()
+
+set nocompatible
 set nu
 set cindent
 set autoindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
-syntax enable
+set textwidth=80
+
 filetype plugin indent on
+syntax enable
 
 "nerdtree
 let mapleader=","
