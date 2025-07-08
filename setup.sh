@@ -33,3 +33,7 @@ echo "📦 Installing plugins with Vundle..."
 vim +PluginInstall +qall
 
 echo "✅ Done! Vim with Vundle is ready 🎉"
+
+
+#iterm2 Shell Integration
+curl -L https://iterm2.com/shell_integration/install_shell_integration.sh | bash
