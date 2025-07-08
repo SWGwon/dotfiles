@@ -37,3 +37,11 @@ echo "✅ Done! Vim with Vundle is ready 🎉"
 
 #iterm2 Shell Integration
 curl -L https://iterm2.com/shell_integration/install_shell_integration.sh | bash
+
+#gemini
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm install --lts
+npm install -g @google/gemini-cli
