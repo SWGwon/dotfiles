@@ -34,37 +34,3 @@ echo "📦 Installing plugins with vim-plug..."
 vim +PlugInstall +qall
 
 echo "✅ Done! Vim with vim-plug is ready 🎉"
-
-
-#iterm2 Shell Integration
-if [ ! -f "$HOME/.iterm2_shell_integration.bash" ]; then
-    echo "📥 Installing iTerm2 Shell Integration..."
-    curl -L https://iterm2.com/shell_integration/install_shell_integration.sh | bash
-else
-    echo "✅ iTerm2 Shell Integration already installed"
-fi
-
-# NVM (Node Version Manager)
-if ! command -v nvm &> /dev/null; then
-    echo "📥 Installing NVM..."
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-else
-    echo "✅ NVM already installed"
-fi
-
-# Gemini CLI
-# Ensure nvm is sourced for npm to be available
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-if ! command -v gemini &> /dev/null; then
-    echo "📥 Installing Gemini CLI..."
-    nvm install --lts
-    npm install -g @google/gemini-cli
-else
-    echo "✅ Gemini CLI already installed"
-fi
-
