@@ -37,6 +37,6 @@ echo "✅ Done! Vim with vim-plug is ready 🎉"
 
 #brew
 git clone https://github.com/Homebrew/brew ~/.linuxbrew
-echo 'eval "$($HOME/.linuxbrew/bin/brew shellenv)"' >> ~/.bash_rc
-echo 'export CMAKE_PREFIX_PATH=$(brew --prefix)' >> ~/.bash_rc
-source ~/.bash_rc
+echo 'eval "$($HOME/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
+echo 'export CMAKE_PREFIX_PATH=$(brew --prefix)' >> ~/.bashrc
+source ~/.bashrc
